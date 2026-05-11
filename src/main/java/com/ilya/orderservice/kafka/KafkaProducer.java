@@ -12,6 +12,6 @@ public class KafkaProducer {
     private final KafkaTemplate<String, OrderViewDto> kafkaTemplate;
 
     public void sendMessage(OrderViewDto orderViewDto){
-        kafkaTemplate.send("order-send", orderViewDto);
+        kafkaTemplate.send("order-topic", orderViewDto);
     }
 }

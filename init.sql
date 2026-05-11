@@ -26,21 +26,8 @@ from Bags as b join Foods as f on b.food_id = f.id
                join Users as u on b.user_id = u.id
 group by u.id;
 
-insert into Users("name","email","password","role")
-values ('Ilya', 'ilya@yahoo.com', '12345','ROLE_ADMIN');
-insert into Users("name","email","password","role")
-values ('Roman', 'roma@yahoo.com', '12345','ROLE_USER');
-
-alter table Foods add constraint positive_food_price check ( price > 0 );
 
 insert into foods("name", "price") values ('pasta', 200);
 insert into foods("name", "price") values ('meat', 300);
 insert into foods("name", "price") values ('potato', 100);
 
---2 мяса для Романа и 1 пасиа
-insert into Bags("user_id", "food_id", "quantity") VALUES (2, 2, 2);
-insert into Bags("user_id", "food_id", "quantity") VALUES (2, 1, 1);
---3 картошки для Ильи
-insert into Bags("user_id", "food_id", "quantity") VALUES (1, 3, 3);
-
-select * from order_vw;
